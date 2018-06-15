@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/beans ">
+
+    <bean name="helloBeanImpl" class="com.advice.IOC.HelloBeanImpl">
+        <property name="name" value="Hello World! test"></property>
+        <property name="yuchService" ref="yuchServiceImpl"></property>
+    </bean>
+
+    <bean name="yuchServiceImpl" class="com.advice.IOC.YuchServiceImpl">
+        <property name="helloBean" ref="helloBeanImpl"></property>
+    </bean>
+
+    <!--<bean name="beanPostProcessorTest" class="com.yuch.aop.BeanPostProcessorTest"></bean>-->
+
+    <bean name="aspectJCreate" class="com.advice.aop.aspectj.AspectJAwareAdvisorAutoProxyCreator">
+        <property name="proxyTargetClass" value="cglib"></property>
+    </bean>
+
+    <bean name="timeInterceptor" class="com.advice.aop.TimeInterceptor"/>
+
+    <bean name="pointcutAdvisor" class="com.advice.aop.pointcut.aspectj.AspectJExpressionPointcutAdvisor">
+        <property name="advice" ref="timeInterceptor"/>
+        <property name="expression" value="execution(* com.advice.IOC.YuchService.*(..))"/>
+    </bean>
+
+</beans>
