@@ -1,18 +1,17 @@
 package com.advice.aop;
 
-import com.advice.aop.pointcut.Advisor;
-import com.advice.aop.pointcut.DefaultPointcutAdvisor;
-import com.advice.aop.pointcut.MethodMatcher;
+import com.advice.aop.pointcut.*;
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.MethodInterceptor;
 
+import java.lang.reflect.Method;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by yuch on 2018/6/10.
  */
-public class AdvisedSupport {
+public class AdvisedSupport  {
     //代理的目标函数
     private TargetSource targetSource;
     //执行目标函数的过滤函数
@@ -21,6 +20,8 @@ public class AdvisedSupport {
     private MethodMatcher methodMatcher;
 
     private List<Advisor> advisors = new LinkedList<Advisor>();
+
+    private AdvisorChainFactory advisorChainFactory = new DefaultAdvisorChainFactory();
 
     public TargetSource getTargetSource() {
         return targetSource;
@@ -46,16 +47,30 @@ public class AdvisedSupport {
         this.methodMatcher = methodMatcher;
     }
 
-    public void addAdvice(Advice advice){
-        int size = this.advisors.size();
-        addAdvice(size, advice);
+    public void addAdvisor(Advisor advisor){
+        int pos = this.advisors.size();
+        addAdvisor(pos,advisor);
     }
 
-    public void addAdvice(int pos, Advice advice){
+    public void addDefaultPointcutAdvisorAdvice(Advice advice){
+        int size = this.advisors.size();
+        addDefaultPointcutAdvisorAdvice(size, advice);
+    }
+
+    private void addDefaultPointcutAdvisorAdvice(int pos, Advice advice){
         addAdvisor(pos, new DefaultPointcutAdvisor(advice));
     }
 
-    public void addAdvisor(int pos, Advisor advisor){
+    private void addAdvisor(int pos, Advisor advisor){
         this.advisors.add(pos, advisor);
+    }
+
+    public List<Advisor> getAdvisors() {
+        return advisors;
+    }
+
+    public List<Object> getInterceptorsAndDynamicInterceptionAdvice(Method method, Class<?> targetClass) {
+        return this.advisorChainFactory.getInterceptorsAndDynamicInterceptionAdvice(
+                this, method, targetClass);
     }
 }

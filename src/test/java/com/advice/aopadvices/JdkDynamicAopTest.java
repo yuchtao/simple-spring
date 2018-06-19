@@ -1,4 +1,4 @@
-package com.advice.aop;
+package com.advice.aopadvices;
 
 import com.advice.IOC.HelloBean;
 import com.advice.context.XmlClassPathApplicationContext;
@@ -12,7 +12,7 @@ public class JdkDynamicAopTest {
     @Test
     public void test1(){
         try {
-            XmlClassPathApplicationContext xmlClassPathApplicationContext = new XmlClassPathApplicationContext("yuch.xml");
+            XmlClassPathApplicationContext xmlClassPathApplicationContext = new XmlClassPathApplicationContext("yuch-aop-adivces.xml");
             HelloBean helloBeanImpl = (HelloBean) xmlClassPathApplicationContext.getBean("helloBeanImpl");
             helloBeanImpl.helloWorld();
 

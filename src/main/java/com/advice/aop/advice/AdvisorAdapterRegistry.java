@@ -1,6 +1,5 @@
 package com.advice.aop.advice;
 
-import com.advice.aop.advice.AdvisorAdapter;
 import com.advice.aop.pointcut.Advisor;
 import org.aopalliance.intercept.MethodInterceptor;
 

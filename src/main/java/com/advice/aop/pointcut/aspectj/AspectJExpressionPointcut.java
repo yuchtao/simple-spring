@@ -61,6 +61,10 @@ public class AspectJExpressionPointcut implements Pointcut, ClassMatcher, Method
 		this.expression = expression;
 	}
 
+	public String getExpression() {
+		return expression;
+	}
+
 	@Override
 	public ClassMatcher getClassMatcher() {
 		return this;

@@ -1,7 +1,5 @@
 package com.advice.aop.advice.after;
 
-import com.advice.aop.advice.after.AfterAdivce;
-import com.advice.aop.advice.after.AfterReturningAdivce;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 
@@ -9,7 +7,7 @@ import org.aopalliance.intercept.MethodInvocation;
  * Created by yuch on 2018/6/15.
  */
 public class AfterReturningAdviceInterceptor implements MethodInterceptor, AfterAdivce {
-    private com.advice.aop.advice.after.AfterReturningAdivce afterReturningAdivce;
+    private AfterReturningAdivce afterReturningAdivce;
 
     public AfterReturningAdviceInterceptor(AfterReturningAdivce afterReturningAdivce) {
         this.afterReturningAdivce = afterReturningAdivce;

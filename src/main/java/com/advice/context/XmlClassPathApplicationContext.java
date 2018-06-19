@@ -8,6 +8,7 @@ import com.advice.bean.io.URLResourceLoader;
 import com.advice.bean.xml.XmlClassPathBeanDefinitionReader;
 import com.advice.bean.factory.AutoWireBeanFactory;
 import com.advice.context.ApplicationContext;
+import org.aopalliance.aop.Advice;
 
 import java.util.List;
 import java.util.Map;

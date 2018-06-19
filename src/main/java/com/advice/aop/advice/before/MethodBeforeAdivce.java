@@ -1,7 +1,5 @@
 package com.advice.aop.advice.before;
 
-import com.advice.aop.advice.before.BeforeAdvice;
-
 import java.lang.reflect.Method;
 
 /**
