@@ -16,7 +16,7 @@ http://www.springframework.org/schema/beans ">
     <!--<bean name="beanPostProcessorTest" class="com.yuch.aop.BeanPostProcessorTest"></bean>-->
 
     <bean name="aspectJCreate" class="com.advice.aop.aspectj.AspectJAwareAdvisorAutoProxyCreator">
-        <property name="proxyTargetClass" value="jdk"></property>
+        <property name="proxyTargetClass" value="jaadk"></property>
     </bean>
 
     <bean name="timeInterceptor" class="com.advice.aop.TimeInterceptor"/>
