@@ -6,6 +6,7 @@ import org.junit.Test;
 
 /**
  * Created by yuch on 2018/6/14.
+ * aop测试类，jdk和cglib方式主要是由AspectJAwareAdvisorAutoProxyCreator的proxyTargetClass属性决定的
  */
 public class CglibProxyTest {
 

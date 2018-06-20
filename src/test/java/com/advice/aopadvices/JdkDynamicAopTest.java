@@ -6,6 +6,7 @@ import org.junit.Test;
 
 /**
  * Created by yuch on 2018/6/10.
+ * aop实现前置通知，后置通知，环绕通知的测试样类
  */
 public class JdkDynamicAopTest {
 

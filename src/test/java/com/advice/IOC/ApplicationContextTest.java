@@ -5,6 +5,7 @@ import org.junit.Test;
 
 /**
  * Created by yuch on 2017/8/30.
+ * IOC测试
  */
 public class ApplicationContextTest {
 

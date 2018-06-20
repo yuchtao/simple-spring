@@ -6,6 +6,7 @@ import org.junit.Test;
 
 /**
  * Created by yuch on 2018/6/14.
+ * 注解方式实现IOC 测试类
  */
 public class AnnotationIOCTest {
 
