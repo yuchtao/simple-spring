@@ -17,7 +17,7 @@ import java.io.IOException;
 public class XmlLoaderBeanFactoryTest {
 
     @Test
-    public void test() throws IOException, SAXException, ParserConfigurationException {
+    public void test() throws Exception {
         Resource resource = new URLResourceLoader().getResourceLoader("yuch.xml");
         XmlClassPathBeanDefinitionReader xmlClassPath = new XmlClassPathBeanDefinitionReader(resource);
         xmlClassPath.loadBeanDefinition();
@@ -32,7 +32,7 @@ public class XmlLoaderBeanFactoryTest {
     }
 
     @Test
-    public void test1() throws IOException, SAXException, ParserConfigurationException {
+    public void test1() throws Exception {
         Resource resource = new URLResourceLoader().getResourceLoader("yuch.xml");
         XmlClassPathBeanDefinitionReader xmlClassPath = new XmlClassPathBeanDefinitionReader(resource);
         xmlClassPath.loadBeanDefinition();

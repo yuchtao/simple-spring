@@ -18,6 +18,11 @@ public class URLResource implements Resource {
     }
 
     @Override
+    public String getResourcePath() {
+        return url.getPath();
+    }
+
+    @Override
     public InputStream getInputStream() throws IOException {
         URLConnection urlConnection = url.openConnection();
         urlConnection.connect();

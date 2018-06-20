@@ -26,7 +26,7 @@ public class XmlClassPathBeanDefinitionReader extends AbstractBeanDefinitionRead
     }
 
     @Override
-    public void loadBeanDefinition() throws ParserConfigurationException, IOException, SAXException {
+    public void loadBeanDefinition() throws Exception {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         Document parse = documentBuilder.parse(getResource().getInputStream());

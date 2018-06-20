@@ -9,5 +9,5 @@ import java.io.IOException;
  * Created by yuch on 2017/8/29.
  */
 public interface BeanDefinitionReader {
-    void loadBeanDefinition() throws ParserConfigurationException, IOException, SAXException;
+    void loadBeanDefinition() throws Exception;
 }

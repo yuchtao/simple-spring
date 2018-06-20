@@ -18,7 +18,7 @@ import java.util.Map;
 public class XmlTest {
 
     @Test
-    public void test() throws IOException, SAXException, ParserConfigurationException {
+    public void test() throws Exception {
         Resource resource = new URLResourceLoader().getResourceLoader("yuch.xml");
         com.advice.bean.xml.XmlClassPathBeanDefinitionReader xmlClassPath = new XmlClassPathBeanDefinitionReader(resource);
         xmlClassPath.loadBeanDefinition();
